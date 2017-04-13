@@ -1,0 +1,194 @@
+<properties
+    pageTitle="Azure Mobile tetszés szerint elmélyedhet iOS SDK frissítési eljárás |} Microsoft Azure"
+    description="Legújabb frissítéseket, és az iOS Azure Mobile tetszés szerint elmélyedhet SDK eljárások"
+    services="mobile-engagement"
+    documentationCenter="mobile"
+    authors="piyushjo"
+    manager="erikre"
+    editor="" />
+
+<tags
+    ms.service="mobile-engagement"
+    ms.workload="mobile"
+    ms.tgt_pltfrm="mobile-ios"
+    ms.devlang="objective-c"
+    ms.topic="article"
+    ms.date="09/14/2016"
+    ms.author="piyushjo" />
+
+#<a name="upgrade-procedures"></a>Frissítési eljárások
+
+Ha Ön már rendelkezik integrált tetszés szerint elmélyedhet a régebbi verzióját az alkalmazásba, akkor a SDK frissítéskor, vegye figyelembe az alábbiakat.
+
+Az egyes a SDK verzióját kell először lecserélnie (távolítsa el, és importálja újra xcode) a EngagementSDK és EngagementReach mappa.
+
+##<a name="from-300-to-400"></a>A 3.0.0 való 4.0.0
+
+### <a name="xcode-8"></a>XCode 8
+XCode 8 kötelező kezdve a SDK 4.0.0 verziója fut.
+
+> [AZURE.NOTE] Ha valóban függenek XCode 7 majd használhatja az [iOS tetszés szerint elmélyedhet SDK v3.2.4](https://aka.ms/r6oouh). Van egy ismert hibát előző verziójában vannak moduljának iOS 10 rendszerű eszközökön futtatása közben: nincsenek actioned rendszerüzenetek. Elhárításához választania kell az elavult API megvalósítása `application:didReceiveRemoteNotification:` az alkalmazásban delegálása az alábbi képlettel történik:
+
+    - (void)application:(UIApplication*)application
+    didReceiveRemoteNotification:(NSDictionary*)userInfo
+    {
+        [[EngagementAgent shared] applicationDidReceiveRemoteNotification:userInfo fetchCompletionHandler:nil];
+    }
+
+> [AZURE.IMPORTANT] **Nem javasoljuk ezt a kerülő megoldást** a jelenség, módosíthatja a bármely közelgő (akár kisebb) iOS verziófrissítés mivel ez iOS API elavult. Meg kell váltani XCode 8 minél korábban beállítást.
+
+### <a name="usernotifications-framework"></a>UserNotifications keretrendszer
+Be kell állítania a `UserNotifications` keretrendszer a összeállítása fázisaiban.
+
+a project explorer nyissa meg a projekt ablaktáblát, és válassza ki a megfelelő célját. Ezután nyissa meg a **"Szerkesztés fázisok"** fülre, és a **"hivatkozás bináris és-tárak"** menüben adja hozzá a keret `UserNotifications.framework` -hivatkozás, mint beállítása`Optional`
+
+### <a name="application-push-capability"></a>Alkalmazás leküldéses lehetőség
+XCode 8 előfordulhat, hogy állítsa alaphelyzetbe az alkalmazás képesség leküldéses, dupla ellenőrizze a `capability` lapja a kijelölt cél.
+
+### <a name="add-the-new-ios-10-notification-registration-code"></a>Az új iOS 10 értesítési regisztráció programkódjának hozzáadása
+Az értesítések alkalmazás rögzítése a régebbi kódrészletet továbbra is működik, de a iOS 10 rendszerben elavult API-khoz használja.
+
+Importálás a `User Notification` keretrendszer:
+
+        #import <UserNotifications/UserNotifications.h> 
+
+Az alkalmazás meghatalmazott a `application:didFinishLaunchingWithOptions` módszer csere:
+
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert) categories:nil]];
+        [application registerForRemoteNotifications];
+    }
+    else {
+
+        [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    }
+
+szerint:
+
+        if (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_8_0)
+        {
+            if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_9_x_Max)
+            {
+                [UNUserNotificationCenter.currentNotificationCenter requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {}];
+            }else
+            {
+                [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)   categories:nil]];
+            }
+            [application registerForRemoteNotifications];
+        }
+        else
+        {
+            [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+        }
+
+### <a name="if-you-already-have-your-own-unusernotificationcenterdelegate-implementation"></a>Ha már rendelkezik saját UNUserNotificationCenterDelegate végrehajtása
+
+A SDK szintén saját UNUserNotificationCenterDelegate protokollt végrehajtását. Akkor használja a SDK csomagjában talál az életciklusának tetszés szerint elmélyedhet értesítés az eszközön iOS 10 vagy újabb rendszeren futó Lync. Ha a SDK észleli a meghatalmazott azt nem fogja használni a saját végrehajtása mivel egy alkalmazás csak egy UNUserNotificationCenter meghatalmazott láthatja. Ez azt jelenti, hogy be kell a tetszés szerint elmélyedhet logika hozzáadása a saját meghatalmazott.
+
+Kétféleképpen cél.
+
+Egyszerűen, amelyet a meghatalmazott továbbítása felhívja a SDK:
+
+    #import <UIKit/UIKit.h>
+    #import "EngagementAgent.h"
+    #import <UserNotifications/UserNotifications.h>
+
+
+    @interface MyAppDelegate : NSObject <UIApplicationDelegate, UNUserNotificationCenterDelegate>
+    @end
+
+    @implementation MyAppDelegate
+
+    - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler
+    {
+      // Your own logic.
+
+      [[EngagementAgent shared] userNotificationCenterWillPresentNotification:notification withCompletionHandler:completionHandler]
+    }
+
+    - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler
+    {
+      // Your own logic.
+
+      [[EngagementAgent shared] userNotificationCenterDidReceiveNotificationResponse:response withCompletionHandler:completionHandler]
+    }
+    @end
+
+Vagy öröklő a `AEUserNotificationHandler` osztály
+
+    #import "AEUserNotificationHandler.h"
+    #import "EngagementAgent.h"
+
+    @interface CustomUserNotificationHandler :AEUserNotificationHandler
+    @end
+
+    @implementation CustomUserNotificationHandler
+
+    - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler
+    {
+      // Your own logic.
+
+      [super userNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler];
+    }
+
+    - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse: UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler
+    {
+      // Your own logic.
+
+      [super userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
+    }
+
+    @end
+
+> [AZURE.NOTE] Meghatározhatja, hogy értesítést tetszés szerint elmélyedhet vagy nem megkerülhetők megtalálható-e a `userInfo` a Agent szótár `isEngagementPushPayload:` módszer osztály.
+
+##<a name="from-200-to-300"></a>A 2.0.0 való 3.0.0
+Az iOS támogatási kihagyott 4.X. Ez a verzió kezdve az alkalmazás a telepítés helyének kell legalább iOS 6.
+
+Ha az alkalmazás esetén vannak, fel kell vennie `remote-notification` érték a `UIBackgroundModes` tömb a Info.plist fájl annak érdekében, hogy a távoli értesítéseket.
+
+A módszer `application:didReceiveRemoteNotification:` helyébe kell `application:didReceiveRemoteNotification:fetchCompletionHandler:` az alkalmazás meghatalmazott a.
+
+"AEPushDelegate.h" elavult felületet, és el kell távolítania összes hivatkozást. Ide tartoznak a eltávolítása `[[EngagementAgent shared] setPushDelegate:self]` és a meghatalmazott módszerek az alkalmazás meghatalmazott:
+
+    -(void)willRetrieveLaunchMessage;
+    -(void)didFailToRetrieveLaunchMessage;
+    -(void)didReceiveLaunchMessage:(AEPushMessage*)launchMessage;
+
+##<a name="from-1160-to-200"></a>A 1.16.0 való 2.0.0
+Az alábbi leírja, hogy miként telepítheti át SDK integrációs-alkalmazásba, Azure Mobile tetszés szerint elmélyedhet hajtott Capptain Társítások által kínált Capptain szolgáltatás.
+Ha egy korábbi verzióról, olvassa el a Capptain webhely 1.16 először áttelepítése, majd az alábbi eljárást alkalmazni.
+
+>[AZURE.IMPORTANT] Capptain és Mobile tetszés szerint elmélyedhet nem ugyanazok a szolgáltatások és az alábbi eljárás csak kiemeli az ügyfél alkalmazás áttelepítése. Az alkalmazásban a SDK áttelepítése nem áttelepíti az adatok a Capptain kiszolgálókról Mobile tetszés szerint elmélyedhet kiszolgálókhoz
+
+### <a name="agent"></a>Ügynök
+
+A módszer `registerApp:` felváltotta az új módszer `init:`. Az alkalmazás meghatalmazott frissítenie kell a lehetőséget, és használja a kapcsolati karakterláncot:
+
+            - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+            {
+              [...]
+              [EngagementAgent init:@"YOUR_CONNECTION_STRING"];
+              [...]
+            }
+
+A nyomon követés SmartAd el lett távolítva csak el kell távolítania az összes előfordulását SDK `AETrackModule` osztály
+
+### <a name="class-name-changes"></a>Class nevének módosítása
+
+A rebranding részeként néhány módosítani kell osztályfájl/nevet.
+
+A program "OI" előtag átnevez előtaggal "CP" az összes osztály.
+
+Példa:
+
+-   `CPModule.h`átnevezi `AEModule.h`.
+
+A "Tevékenységek" előtag átnevezi előtaggal "Capptain" az összes osztály.
+
+Példa:
+
+-   Az osztály `CapptainAgent` átnevezi `EngagementAgent`.
+-   Az osztály `CapptainTableViewController` átnevezi `EngagementTableViewController`.
+-   Az osztály `CapptainUtils` átnevezi `EngagementUtils`.
+-   Az osztály `CapptainViewController` átnevezi `EngagementViewController`.
