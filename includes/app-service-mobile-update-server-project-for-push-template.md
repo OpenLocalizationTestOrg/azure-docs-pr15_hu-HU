@@ -1,0 +1,102 @@
+Ebben a részben módosítás után a meglévő Mobile-alkalmazások kódmentes projektben leküldéses értesítést küldjön minden alkalommal, amikor megjelenik az új elemet. A értesítés hubok [sablonja](../articles/notification-hubs/notification-hubs-templates-cross-platform-push-messages.md) szolgáltatás, platformok veremmutatót engedélyezése épül. Az egyes ügyfelek regisztrált sablonok használata a leküldéses értesítéseket, és egyetlen univerzális leküldéses összes ügyfél platformokon elérhető.
+
+Válasszon az alábbi eljárást, amely megfelel a kódmentes projekttípus&mdash; [.NET kódmentes](#dotnet) vagy a [Node.js kódmentes](#nodejs).
+
+### <a name="dotnet"></a>.NET kódmentes projekt
+1. A Visual Studióban, kattintson a jobb gombbal a kiszolgáló projekt, és kattintson a **NuGet csomagok kezelése**, kereshet `Microsoft.Azure.NotificationHubs`, majd kattintson a **telepítés**gombra. Ez az értesítés hubok tárat a kódmentes értesítést küld a telepítést.
+
+3. Nyissa meg a kiszolgáló projekt **vezérlők** > **TodoItemController.cs**, és adja hozzá a következő utasítások segítségével:
+
+        using System.Collections.Generic;
+        using Microsoft.Azure.NotificationHubs;
+        using Microsoft.Azure.Mobile.Server.Config;
+    
+
+2. A **PostTodoItem** módszer után **InsertAsync**a hívást adja hozzá a következő kódot:  
+
+        // Get the settings for the server project.
+        HttpConfiguration config = this.Configuration;
+        MobileAppSettingsDictionary settings = 
+            this.Configuration.GetMobileAppSettingsProvider().GetMobileAppSettings();
+        
+        // Get the Notification Hubs credentials for the Mobile App.
+        string notificationHubName = settings.NotificationHubName;
+        string notificationHubConnection = settings
+            .Connections[MobileAppSettingsKeys.NotificationHubConnectionString].ConnectionString;
+
+        // Create a new Notification Hub client.
+        NotificationHubClient hub = NotificationHubClient
+        .CreateClientFromConnectionString(notificationHubConnection, notificationHubName);
+
+        // Sending the message so that all template registrations that contain "messageParam"
+        // will receive the notifications. This includes APNS, GCM, WNS, and MPNS template registrations.
+        Dictionary<string,string> templateParams = new Dictionary<string,string>();
+        templateParams["messageParam"] = item.Text + " was added to the list.";
+
+        try
+        {
+            // Send the push notification and log the results.
+            var result = await hub.SendTemplateNotificationAsync(templateParams);
+
+            // Write the success result to the logs.
+            config.Services.GetTraceWriter().Info(result.State.ToString());
+        }
+        catch (System.Exception ex)
+        {
+            // Write the failure result to the logs.
+            config.Services.GetTraceWriter()
+                .Error(ex.Message, null, "Push.SendAsync Error");
+        }
+
+    Elemet tartalmazó sablon értesítést küld a. Új elem beszúrásakor szöveg.
+
+4. A kiszolgáló projekt közzé. 
+
+### <a name="nodejs"></a>NODE.js kódmentes projekt
+
+1. Ha azt még nem tette meg, [Töltse le a quickstart útmutató kódmentes projekt](app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart) , különben [az Azure-portálon online szerkesztő](app-service-mobile-node-backend-how-to-use-server-sdk.md#online-editor).
+
+2. A meglévő kód todoitem.js lecserélése a következőre:
+
+        var azureMobileApps = require('azure-mobile-apps'),
+        promises = require('azure-mobile-apps/src/utilities/promises'),
+        logger = require('azure-mobile-apps/src/logger');
+    
+        var table = azureMobileApps.table();
+        
+        table.insert(function (context) {
+        // For more information about the Notification Hubs JavaScript SDK, 
+        // see http://aka.ms/nodejshubs
+        logger.info('Running TodoItem.insert');
+        
+        // Define the template payload.
+        var payload = '{"messageParam": "' + context.item.text + '" }';  
+        
+        // Execute the insert.  The insert returns the results as a Promise,
+        // Do the push as a post-execute action within the promise flow.
+        return context.execute()
+            .then(function (results) {
+                // Only do the push if configured
+                if (context.push) {
+                    // Send a template notification.
+                    context.push.send(null, payload, function (error) {
+                        if (error) {
+                            logger.error('Error while sending push notification: ', error);
+                        } else {
+                            logger.info('Push notification sent successfully!');
+                        }
+                    });
+                }
+                // Don't forget to return the results from the context.execute()
+                return results;
+            })
+            .catch(function (error) {
+                logger.error('Error while running context.execute: ', error);
+            });
+        });
+
+        module.exports = table;  
+
+    Ez a sablon értesítést, amely tartalmazza a item.text, amikor új elemet a program beszúrja küld.
+
+2. Szerkeszti a fájlt a helyi számítógépen, amikor ismét közzéteheti a kiszolgáló-projektet.

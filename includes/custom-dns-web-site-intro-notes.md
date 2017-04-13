@@ -1,0 +1,5 @@
+Ez a témakör az Azure alkalmazás szolgáltatás (Web Apps, API-alkalmazások, Mobile-alkalmazások, logika alkalmazások); Felhőszolgáltatások olvassa el az [egyéni tartománynevet az Azure felhőalapú szolgáltatás konfigurálása](../articles/cloud-services/cloud-services-custom-domain-name.md)című témakört.
+
+> [AZURE.NOTE]  Ha Ön alkalmazás betöltés-készíteni, hogy a [Azure forgalom Manager](https://azure.microsoft.com/services/traffic-manager/), és kattintson a tetején látható ez a cikk lépéseivel megszerezni.
+>
+> **Egyéni tartomány neve nincs engedélyezve a szabad réteg**. Meg kell [felfelé egy újabb árak réteg skála](../articles/app-service-web/web-sites-scale.md), ami előfordulhat, hogy mennyi számlázható, az előfizetéséhez. Lásd: az [Alkalmazás szolgáltatás árak](https://azure.microsoft.com/pricing/details/app-service/) további információt.

@@ -1,0 +1,3 @@
+Egyéni tartománynév beállítása a web App Azure App szolgáltatásban, amely terheléselosztása forgalom kezelő által csak a **szabványos** üzemmódban webhelyeket. Egy webalkalmazás az ingyenes alkalmazás szolgáltatás terv mód a megosztott, Basic vagy normál módra vált, akkor először el kell távolítani kiadások CAPS LOCK helyen alkalmazás szolgáltatás előfizetéshez tartozó. 
+
+További információt az alkalmazás szolgáltatás terv módban, például hogy miként módosíthatja a webhely a módot, megtudhatja, [hogy miként méretezheti webhelyek](../articles/app-service-web/web-sites-scale.md).

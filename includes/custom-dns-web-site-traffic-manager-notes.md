@@ -1,0 +1,1 @@
+Ha Ön nem rendelkezik a forgalom Manager profilok, az információk segítségével [használatával gyors létrehozása forgalom Manager profil](../articles/traffic-manager/traffic-manager-manage-profiles.md) létrehozása hozzon létre egy újat. Megjegyzés: a **. trafficmanager.net** forgalom Manager profilját, társított, mint ez később által használandó újabb lépéseket a dokumentumban.

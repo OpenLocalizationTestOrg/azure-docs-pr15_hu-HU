@@ -1,0 +1,4 @@
+
+* [Regisztráljon az alkalmazás-alkalmazás azonosítója](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html#//apple_ref/doc/uid/TP40012582-CH30-SW991). Hozzon létre egy explicit alkalmazás Azonosítót (nem helyettesítő alkalmazás azonosítója), és **Az első lépésekhez azonosítója**, használja a pontos **Az első lépésekhez Azonosítót** , amely a Xcode quickstart útmutató projektben. Nagyon fontos is ellenőrizze, hogy a **Leküldéses értesítések** beállítást. 
+
+* Következő, a [Felkészülés a leküldéses értesítések konfigurálása](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html#//apple_ref/doc/uid/TP40012582-CH26-SW6), "Fejlesztési" vagy "Terjesztési" SSL-tanúsítvány létrehozása.

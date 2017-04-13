@@ -1,0 +1,1 @@
+A Microsoft Azure forgalom Manager betöltése egyenleg forgalom webhelyére Azure használatakor, hogy a webhely majd azok webböngészőn a ** \*. trafficmanager.net** Azure által megadott tartomány nevét. Egyéni tartománynevet, például: www.contoso.com, annak érdekében, hogy a felhasználók számára a további felismerhető tartománynév megadása a webhelyhez is társíthat.

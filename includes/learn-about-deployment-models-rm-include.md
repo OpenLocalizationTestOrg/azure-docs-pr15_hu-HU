@@ -1,0 +1,1 @@
+> [AZURE.NOTE] Azure van két különböző telepítési modellekkel létrehozásáról és használatáról az erőforrások: [az erőforrás-kezelő és klasszikus](../articles/resource-manager-deployment-model.md).  Ez a cikk bemutatja, hogy a Microsoft által a legtöbb új telepítésekhez, hanem erőforrás-kezelő telepítési modellt használja a
