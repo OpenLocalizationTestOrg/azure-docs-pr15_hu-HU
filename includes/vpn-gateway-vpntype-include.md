@@ -1,0 +1,7 @@
+- **PolicyBased:** PolicyBased VPN adatai a korábban a klasszikus telepítési modell statikus útválasztási átjárók voltak neve. Házirend-alapú VPN adatai titkosítása és a cím prefixumokban a helyszíni hálózaton és az Azure VNet között a különféle konfigurált házirendeket alapján IPsec alagutak csomagjait közvetlen. A házirend (vagy a forgalmat a választó) általában definíciója a virtuális Magánhálózati eszköz konfigurációs-hozzáférési listájára. Az egy PolicyBased VPN-típus értéke *PolicyBased*. Amikor PolicyBased VPN használ, vegye figyelembe az alábbi korlátozások vonatkoznak:
+
+    - Az egyszerű átjáró Termékváltozat PolicyBased VPN adatai lehet **csak** használható. E VPN-típus szoftvere nem kompatibilis a más átjáró termékváltozatok.
+    - Csak 1 alagutas PolicyBased VPN használata esetén is.
+    - PolicyBased VPN adatai csak használható S2S kapcsolatokat, és csak bizonyos beállításokat. A legtöbb virtuális Magánhálózati átjáró konfigurációk RouteBased VPN szükség.
+
+- **RouteBased**: RouteBased VPN adatai volt korábban ezek neve dinamikus útválasztási átjárók a klasszikus telepítési modell. Az IP továbbít, illetve útválasztási tábla közvetlen csomagok be a megfelelő alagutas felületek "útvonal" RouteBased VPN adatai használja. A kapcsolatok ezután titkosítása és a csomagok és kijelentkezés a alagutak visszafejtése. A házirend (vagy a forgalmat a választó) RouteBased VPN konfigurált bármely-a-bármely (vagy helyettesítő karakterek). Az egy RouteBased VPN-típus értéke *RouteBased*.

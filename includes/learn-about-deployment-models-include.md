@@ -1,0 +1,1 @@
+> [AZURE.IMPORTANT] Azure erőforrásokkal dolgozik, mielőtt megismerkedhet a telepítési modellek: [erőforrás-kezelő, és a klasszikus](../articles/resource-manager-deployment-model.md).

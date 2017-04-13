@@ -1,0 +1,1 @@
+Akkor is VNets kapcsolódás virtuális Magánhálózati az átjárók használata nélkül. Ha a VNets ugyanabban a régióban, érdemes figyelembe VNet peering használatával csatlakozik őket. További információ a [VNet peering](../articles/virtual-network/virtual-network-peering-overview.md) témakört.

@@ -1,0 +1,3 @@
+Azure függvények eseményvezérelt, igény szerint számítási funkcióit, a meglévő alkalmazás Azure platform kód más Azure szolgáltatások, a szoftver termékek és a helyszíni rendszerek bekövetkezett esemény által indított végrehajtásához funkciókhoz nyúló. Azure függvényekkel az alkalmazások alapján igény szerint átméretezheti, vagy ha Ön felhasználása erőforrásokért. Azure függvények lehetővé teszi, hogy hozzon létre böngészőalapú intuitív felhasználói felületet ütemezett vagy indított hardvereszközöket programnyelv számos szerepelni fog kódot tartalmaz. 
+
+A bevezető videó bemutatja, hogyan függvény alkalmazás létrehozása, módosítsa a kódot, valamint hogyan kezelje a eseményindítók és kötések.

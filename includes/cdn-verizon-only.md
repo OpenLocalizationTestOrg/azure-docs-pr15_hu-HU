@@ -1,0 +1,1 @@
+> [AZURE.IMPORTANT] Ez a funkció elérhető **A Verizon Azure CDN** -termékekkel (normál és Premium). Nem támogatott a **Akamai az Azure CDN-t**.  CDN-szolgáltatások összehasonlítása érdekében [Azure CDN áttekintése](cdn-overview.md#azure-cdn-features)című témakörben találhat. 

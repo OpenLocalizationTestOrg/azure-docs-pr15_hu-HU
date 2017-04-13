@@ -1,0 +1,1 @@
+> [AZURE.IMPORTANT] **Azure CDN**-támogatás az Verizon funkciója, és nem érhető el az **Azure CDN szokásos** termékek.  CDN-szolgáltatások összehasonlítása érdekében [Azure CDN áttekintése](cdn-overview.md#azure-cdn-features)című témakörben találhat. 

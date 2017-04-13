@@ -1,0 +1,11 @@
+> [AZURE.SELECTOR]
+- [– Áttekintés](../articles/hdinsight/hdinsight-use-hive.md)
+- [Struktúra megtekintése](../articles/hdinsight/hdinsight-hadoop-use-hive-ambari-view.md)
+- [SSH](../articles/hdinsight/hdinsight-hadoop-use-hive-ssh.md)
+- [Beeline](../articles/hdinsight/hdinsight-hadoop-use-hive-beeline.md)
+- [Curl](../articles/hdinsight/hdinsight-hadoop-use-hive-curl.md)
+- [A PowerShell](../articles/hdinsight/hdinsight-hadoop-use-hive-powershell.md)
+- [.NET](../articles/hdinsight/hdinsight-hadoop-use-hive-dotnet-sdk.md)
+- [Visual Studio](../articles/hdinsight/hdinsight-hadoop-use-hive-visual-studio.md)
+- [Távoli asztal](../articles/hdinsight/hdinsight-hadoop-use-hive-remote-desktop.md)
+- [Lekérdezés konzolon](../articles/hdinsight/hdinsight-hadoop-use-hive-query-console.md)

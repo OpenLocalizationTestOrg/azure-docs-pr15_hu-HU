@@ -1,0 +1,5 @@
+Ha meg szeretné érteni, hogy Azure jelenleg működik-e a két környezetben modellek fontos: az erőforrás-kezelő és klasszikus. A konfiguráció megkezdése előtt győződjön meg arról, hogy használja a képernyőn megjelenő utasításokat a telepítési modell, amely használni kívánt. A két modellek, amelyek nem teljesen kompatibilisek egymással.
+
+Például ha videoklippel dolgozik, amely a klasszikus telepítési modell jött létre, és a kapcsolat hozzáadása a VNet volna virtuális hálózatot, használna, amelyek megfelelnek a klasszikus telepítési modell, nem az erőforrás-kezelő telepítési módszerek. Ha az erőforrás-kezelő telepítési modell jött létre virtuális hálózattal dolgozik, akkor használja, amelyek megfelelnek a telepítési módszerek az erőforrás-kezelő, nem klasszikus.
+
+A telepítési modellek tudni lásd: az [erőforrás-kezelő Pivotbeli üzembe és a klasszikus telepítési](../articles/resource-manager-deployment-model.md).

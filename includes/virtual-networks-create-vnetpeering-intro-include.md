@@ -1,0 +1,1 @@
+A két virtuális hálózatok ugyanabban a régióban csatlakozni az Azure Gerinchez hálózaton keresztül mechanizmusa VNet Peering. Miután peered, a két virtuális hálózat jelenik virtuális hálózatként minden kapcsolat célra. Az [Áttekintés VNet Peering](../articles/virtual-network/virtual-network-peering-overview.md) olvassa el, ha nem ismeri a VNet Peering.

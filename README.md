@@ -1,122 +1,121 @@
-# Azure Technical Documentation Contributor Guide
+# <a name="azure-technical-documentation-contributor-guide"></a>Azure műszaki dokumentáció közreműködői útmutató
 
-You've found the GitHub repository that houses the source for the technical documentation that is published to the Azure Documentation Center at [http://azure.microsoft.com/documentation](http://azure.microsoft.com/documentation).
+Megtalálta a GitHub tárházba, amely a forrás, a műszaki dokumentáció [http://azure.microsoft.com/documentation](http://azure.microsoft.com/documentation)Azure dokumentáció középen közzétett tárolja.
 
-This repository also contains guidance to help you contribute to our technical documentation.  For a list of the articles in the contributors' guide, see [the index](https://github.com/Azure/azure-content/blob/master/contributor-guide/contributor-guide-index.md).
+Ez a tár is tartalmaz útmutatást segítséget szerkeszthetik azokat a műszaki dokumentációt.  A munkatársak útmutatóban a cikkek listájáért lásd: [az index](https://github.com/Azure/azure-content/blob/master/contributor-guide/contributor-guide-index.md).
 
-## Contribute to Azure documentation
+## <a name="contribute-to-azure-documentation"></a>Azure dokumentációt közreműködés
 
-Thank you for your interest in Azure documentation!
+Köszönjük az érdeklődését Azure dokumentációjában!
 
-* [Ways to contribute](#ways-to-contribute)
-* [Code of conduct](#code-of-conduct)
-* [About your contributions to Azure content](#about-your-contributions-to-azure-content)
-* [Repository organization](#repository-organization)
-* [Use GitHub, Git, and this repository](#use-github-git-and-this-repository)
-* [How to use markdown to format your topic](#how-to-use-markdown-to-format-your-topic)
-* [Feedback, comments, and support](./contributor-guide/feedback-and-comments.md)
-* [More resources](#more-resources)
-* [Index of all contributors' guide articles](./contributor-guide/contributor-guide-index.md) (opens new page)
+* [Közreműködés módjai](#ways-to-contribute)
+* [Kódját lebonyolítása](#code-of-conduct)
+* [Tudnivalók az adományok Azure tartalom](#about-your-contributions-to-azure-content)
+* [A szervezet tárházba](#repository-organization)
+* [GitHub, mely számjegy és a tárházba](#use-github-git-and-this-repository)
+* [Hogyan formázhatja a témakör markdown segítségével](#how-to-use-markdown-to-format-your-topic)
+* [Visszajelzés, a megjegyzések és támogatás](./contributor-guide/feedback-and-comments.md)
+* [További források](#more-resources)
+* [Az összes munkatársak útmutató cikkek indexe](./contributor-guide/contributor-guide-index.md) (az új lap nyílik meg)
 
-## Ways to contribute 
+## <a name="ways-to-contribute"></a>Közreműködés módjai 
 
-You can contribute to [Azure documentation](http://azure.microsoft.com/documentation/) in a few different ways:
+[Azure dokumentáció](http://azure.microsoft.com/documentation/) többféleképpen hozzájárulhat:
 
-* Contribute to a [forum discussion](http://social.msdn.microsoft.com/Forums/windowsazure/home).
-* Submit Disqus comments at the bottom of articles.
-* You can easily contribute to technical articles in the GitHub user interface. Either find the article in this repository, or visit the article on [http://azure.microsoft.com/documentation](http://azure.microsoft.com/documentation) and click the link in the article that goes to the GitHub source for the article.
-* If you are making substantial changes to an existing article, adding or changing images, or contributing a new article, you need to fork this repository, install Git Bash, Markdown Pad, and learn some git commands.
+* [Fórum vitafórum](http://social.msdn.microsoft.com/Forums/windowsazure/home)járulni.
+* Cikkek alján Disqus megjegyzéseket küldhetnek.
+* Egyszerűen hozzájárulhat a GitHub felhasználói felület technikai cikkeket. A cikkben található ez a tár vagy látogasson el a cikk [http://azure.microsoft.com/documentation](http://azure.microsoft.com/documentation) , és kattintson a hivatkozásra, amely a cikk a GitHub forrás ugrik című témakörben.
+* Jelentős módosításokat szeretne egy meglévő cikk készít, ha hozzáadása vagy módosítása a képek vagy járult hozzá az új hozzászólás, akkor a tárházba ágaznak, telepítenie kell mely számjegy Bash, Markdown parancsot, és ismerje meg, bizonyos mely számjegy parancsok.
 
-##Code of conduct
+##<a name="code-of-conduct"></a>Kódját lebonyolítása
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+Ehhez a projekthez elfogadta a [Microsoft megnyitott forrás viselkedési](https://opensource.microsoft.com/codeofconduct/). Lásd: további információt a [Gyakori lebonyolítása kódot](https://opensource.microsoft.com/codeofconduct/faq/) vagy kapcsolattartó [opencode@microsoft.com](mailto:opencode@microsoft.com) bármilyen további kérdéseiket vagy megjegyzéseiket az.
 
-##About your contributions to Azure content
+##<a name="about-your-contributions-to-azure-content"></a>Tudnivalók az adományok Azure tartalom
 
-###Minor corrections
+###<a name="minor-corrections"></a>Kisebb javítások
 
-Minor corrections or clarifications you submit for documentation and code examples in this repo are covered by the [Azure Website Terms of Use (ToU)](http://azure.microsoft.com/support/legal/website-terms-of-use/).
+Az [Azure webhely használati (mezőket)](http://azure.microsoft.com/support/legal/website-terms-of-use/)kisebb javításainak vagy elküldése e repó a dokumentáció és kód példák magyarázata elfednek.
 
 
-###Larger submissions
+###<a name="larger-submissions"></a>Nagyobb beküldött elemek
 
-If you submit a pull request with new or significant changes to documentation and code examples, we'll send a comment in GitHub asking you to submit an online Contribution License Agreement (CLA) if you are in one of these groups:
+Ha Ön kérelem küldése ki az új vagy jelentős módosításokat dokumentáció és kód példák, rendszerünk egy e-megjegyzés GitHub a szólít fel egy online hozzájárulása licenc szerződés (CLA) elküldése, ha ezeket a csoportjai egyikében:
 
-* Members of the Microsoft Open Technologies group.
-* Contributors who don't work for Microsoft.
+* Nyissa meg a Microsoft-technológiák csoportjának tagjai.
+* Munkatársak, akik a Microsoft nem működnek.
 
-We need you to complete the online form before we can accept your pull request.
+Végre kell hajtania az online űrlapot, mielőtt azt is fogadja el a leküldéses kérelem szükséges.
 
-Full details are available at [http://azure.github.io/guidelines/#cla](http://azure.github.io/guidelines/#cla).
+Minden részlet a [http://azure.github.io/guidelines/#cla](http://azure.github.io/guidelines/#cla)érhetők el.
 
-## Repository organization
+## <a name="repository-organization"></a>A szervezet tárházba
 
-The content in the azure-content repository follows the organization of documentation on [Azure.Microsoft.com](http://azure.microsoft.com). This repository contains two root folders:
+A tartalom az azure-tartalom adattárban dokumentáció a szervezet [Azure.Microsoft.com](http://azure.microsoft.com)következik. Ez a tár két legfelső szintű mappa tartalmazza:
 
-### \articles
+### <a name="articles"></a>\articles
 
-The *\articles* folder contains the documentation articles formatted as markdown files with an *.md* extension.
+A *\articles* mappát a dokumentáció cikkek *.md* kiterjesztésű markdown fájlként formázott tartalmazza.
 
-Articles in the root directory are published to Azure.Microsoft.com in the path *http://azure.microsoft.com/documentation/articles/{article-name-without-md}/*.
+Cikkek a legfelső szintű címtárban közzétett Azure.Microsoft.com az elérési út *http://azure.microsoft.com/documentation/articles/ {cikk-neve-nélkül – md} /*.
 
-* **Article filenames:** See [our file naming guidance](./contributor-guide/file-names-and-locations.md).
+* **Fájlnevek cikket:** Lásd: [a fájlelnevezési útmutatást](./contributor-guide/file-names-and-locations.md).
 
-Articles within their own service folder are published to Azure.Microsoft.com in the path
-*http://azure.microsoft.com/documentation/articles/service-folder/{article-name-without-md}/*
+A saját szolgáltatás mappába cikkek közzétett Azure.Microsoft.com az elérési út *http://azure.microsoft.com/documentation/articles/service-folder/ {cikk-neve-nélkül – md} /*
 
-* **Media subfolders:** The *\articles* folder contains the *\media* folder for root directory article media files, inside which are subfolders with the images for each article.  The service folders contain a separate media folder for the articles within each service folder. The article image folders are named identically to the article file, minus the *.md* file extension.
+* **Media almappák:** A *\articles* mappában található a legfelső szintű címtár cikk médiafájlok *\media* mappa belül, amely az egyes cikk képekkel almappái.  A szolgáltatás mappák tartalmaz egy külön media mappát a cikkek minden szolgáltatás mappán belül. A cikk kép mappákat a cikk fájlt *.md* kiterjesztéssel mínusz azonos neve.
 
-### \includes
+### <a name="includes"></a>\includes
 
-You can create reusable content sections to be included in one or more articles. See [Custom extensions used in our technical content](./contributor-guide/custom-markdown-extensions.md).
+Újból felhasználható tartalom szakaszok bekerülnek az egy vagy több cikkek hozhat létre. [A műszaki tartalom használt egyéni bővítmények](./contributor-guide/custom-markdown-extensions.md)megtekintése
 
-### \markdown templates
+### <a name="markdown-templates"></a>\markdown sablonok
 
-This folder contains our standard markdown template with the basic markdown formatting you need for an article.
+Ez a mappa formázással egyszerű markdown cikk van szüksége a szabványos markdown sablont tartalmaz.
 
-### \contributor-guide
+### <a name="contributor-guide"></a>\contributor-Guide
 
-This folder contains articles that are part of our contributors' guide.  
+Ez a mappa a munkatársak útmutató részét képező cikkek tartalmazza.  
 
-## Use GitHub, Git, and this repository
+## <a name="use-github-git-and-this-repository"></a>GitHub, mely számjegy és a tárházba
 
-For information about how to contribute, how to use the GitHub UI to contribute small changes, and how to fork and clone the repository for more significant contributions, see [Install and set up tools for authoring in GitHub](./contributor-guide/tools-and-setup.md).
+Hogyan segíthet a GitHub felhasználói felületének használata szeretné küldeni a módosításokat a kis és ágaznak és a fontosabb adományok tárháza klónozhatja kapcsolatos tudnivalókért lásd: [telepítése és beállítása a GitHub létrehozására szolgáló eszközök](./contributor-guide/tools-and-setup.md).
 
-If you install GitBash and choose to work locally, the steps for creating a new local working branch, making changes, and submitting the changes back to the main branch are listed in [Git commands for creating a new article or updating an existing article](./contributor-guide/git-commands-for-master.md)
+Ha telepíti a GitBash, és válassza a helyi számítógépen, a lépéseket, egy új helyi munkaidő-fiók létrehozása, módosítása és elküldése a módosításokat a fő ág vissza jelennek meg [egy új témakör létrehozása vagy egy meglévő cikk frissítése mely számjegy-parancsok](./contributor-guide/git-commands-for-master.md)
 
-### Branches
+### <a name="branches"></a>Ágak
 
-We recommend that you create local working branches that target a specific scope of change. Each branch should be limited to a single concept/article both to streamline work flow and reduce the possibility of merge conflicts.  The following efforts are of the appropriate scope for a new branch:
+Azt javasoljuk, hogy hozza létre a helyi munka ágak városrész egy adott hatókörének módosítása. Ágak egy egyetlen fogalma és a cikkben is munkafolyamat egyszerűsítése és az esélye egyesítés ütközések, korlátozott kell lennie.  A következő erőfeszítéseket a megfelelő hatókör egy új ág a következők:
 
-* A new article (and associated images)
-* Spelling and grammar edits on an article.
-* Applying a single formatting change across a large set of articles (e.g. new copyright footer).
+* Egy új referenciacikkünket (és a kapcsolódó képeket)
+* Egy cikk helyesírás- és nyelvhelyesség-ellenőrzés módosításokat.
+* Alkalmazza a formázási egyetlen módosítás nagyszámú cikkek (pl. új szerzői jogi élőláb).
 
-## How to use markdown to format your topic
+## <a name="how-to-use-markdown-to-format-your-topic"></a>Hogyan formázhatja a témakör markdown segítségével
 
-All the articles in this repository use GitHub flavored markdown.  Here's a list of resources.
+Ez a tár összes cikkeket GitHub flavored markdown használja.  Az alábbiakban az erőforrások listáját.
 
-- [Markdown basics](https://help.github.com/articles/markdown-basics/)
+- [Markdown alapjai](https://help.github.com/articles/markdown-basics/)
 
-- [Printable markdown cheatsheet](./contributor-guide/media/documents/markdown-cheatsheet.pdf?raw=true)
+- [Nyomtatható markdown cheatsheet](./contributor-guide/media/documents/markdown-cheatsheet.pdf?raw=true)
 
-- For our list of markdown editors, see the [tools and setup topic](./contributor-guide/tools-and-setup.md#install-a-markdown-editor).
+- A markdown szerkesztők listáját olvassa el a az [Eszközök és a telepítő témakör](./contributor-guide/tools-and-setup.md#install-a-markdown-editor)című témakört.
 
-## Article metadata
+## <a name="article-metadata"></a>A cikk metaadatok
 
-Article metadata enables certain functionalities on the azure.microsoft.com web site, such as author attribution, contributor attribution, breadcrumbs, article descriptions, and SEO optimizations as well as reporting Microsoft uses to evaluate the performance of the content. So, the metadata is important! [Here's the guidance for making sure your metadata is done right](./contributor-guide/article-metadata.md).
+Cikk metaadatok lehetővé teszi, hogy az egyes funkciók a azure.microsoft.com webhelyen, például alapon Szerző, közreműködői alapon, tetejéhez, cikk leírásai és keresőmotor-Optimalizálási optimalizálásokat is jelentéskészítési Microsoft használja tartalom teljesítményét ki szeretné számítani. A metaadatok, fontos! [Az alábbiakban az útmutató módon bizonyosodhat meg arról, hogy a metaadat-alapú jobbra befejeződött](./contributor-guide/article-metadata.md).
 
-### Labels
+### <a name="labels"></a>Címkék
 
-Automated labels are assigned to pull requests to help us manage the pull request workflow and to help let you know what's going on with your pull request:
+Automatikus címkék kérések segítse a szolgáltatás kezelése a leküldéses kérelem munkafolyamat és megoldása a lehetővé teszik, hogy mi legyen a történésekkel kapcsolatban a leküldéses kérésével csoportosítani oszthatók:
 
-* Contribution License Agreement related
-    * cla-not-required: The change is relatively minor and does not require that you sign a CLA.
-    * cla-required: The scope of the change is relatively large and requires that you sign a CLA.
-    * cla-signed: The contributor signed the CLA, so the pull request can now move forward for review.
-* Pillar labels: Labels such as PnP, Modern Apps, and TDC help categorize the pull requests by the internal organization that needs to review the pull request.
-* Change sent to author: The author has been notified of the pending pull request.
+* Kapcsolódó hozzájárulása licencszerződése
+    * CLA nem kötelező: A változás viszonylag kisebb, és nem szükséges, hogy bejelentkezik egy CLA.
+    * CLA kötelező: hatókörének módosítása viszonylag nagy és igényel, hogy bejelentkezik egy CLA.
+    * aláírt cla: A közös munka aláírt a CLA, hogy a leküldéses kérelem is most előrelépés véleményezésre.
+* Címkék pillér: például PnP címkék, Modern alkalmazás elemet, és TDC súgó kategorizálása a leküldéses kérelmek a belső, olvassa el a leküldéses kérelem kell, hogy a szervezet által.
+* Tartalom-előállítás küldött módosítása: A Szerző van értesült a függőben lévő ki kérelmet.
 
-## More resources
+## <a name="more-resources"></a>További források
 
-See the [index of our contributor's guide](./contributor-guide/contributor-guide-index.md) for all our guidance topics.
+Lásd: az [index útmutatójának a közös munka](./contributor-guide/contributor-guide-index.md) az útmutató témakörök tartalmaznak.

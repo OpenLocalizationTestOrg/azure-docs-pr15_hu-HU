@@ -1,0 +1,3 @@
+> [AZURE.IMPORTANT] Azure PowerShell támogatása Azure Service Manager (ASM) használó HDInsight-erőforrások kezelésére szolgáló __elavult__, és 2017 január 1 eltávolítja. A lépéseket a jelen dokumentum az új HDInsight-parancsmagok működő Azure erőforrás Manager (ARM) használata.
+>
+> Kérjük, kövesse a [Telepítse és állítsa be a Azure PowerShell](../articles/powershell-install-configure.md) Azure PowerShell legújabb verziójának telepítéséhez. Ha módosítani kell használni az új parancsmagjai Azure erőforrás-kezelővel működő parancsprogramok, olvassa el a [áttelepítése az erőforrás-kezelő Azure-alapú Fejlesztőeszközök HDInsight fürtre vonatkozóan](../articles/hdinsight/hdinsight-hadoop-development-using-azure-resource-manager.md) további információt.
