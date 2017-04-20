@@ -1,0 +1,3 @@
+Az Azure belső terheléselosztó (ILB) biztosít a hálózati terheléselosztás egy felhőalapú szolgáltatás, vagy a virtuális hálózat regionális hatókörű belül találhatók a virtuális gépek között.
+
+Használatát és regionális hatókörű virtuális hálózatok beállítását kapcsolatos információkért lásd: [Regionális virtuális hálózatok](../articles/virtual-network/virtual-networks-migrate-to-regional-vnet.md). Az affinitás csoport konfigurált, meglévő virtuális hálózatok ILB nem használható.
