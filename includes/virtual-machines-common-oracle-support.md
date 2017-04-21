@@ -1,0 +1,1 @@
+> [AZURE.IMPORTANT]  A tartalom elavult és már nem tartani.  Az Oracle-támogatás az Azure összegzését című [Ez közzétett támogatási utasítás.](http://www.oracle.com/technetwork/topics/cloud/faq-1963009.html#support)

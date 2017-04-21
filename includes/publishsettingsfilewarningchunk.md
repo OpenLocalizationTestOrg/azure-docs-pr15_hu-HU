@@ -1,0 +1,2 @@
+> [AZURE.NOTE]
+> A .publishsettings fájlt a hitelesítő adatok (nem titkosított), amellyel az Azure előfizetések és szolgáltatások felügyelete tartalmazza. Biztonsági célszerű ezt a fájlt, hogy kívüli (például a mappában Libraries\Documents) a forrás könyvtárak ideiglenes tárolni, törölje az importálás befejeződése után. Egy rosszindulatú felhasználó, aki hozzáfér a .publishsettings fájl szerkesztése, létrehozása és törlése a Azure szolgáltatások.

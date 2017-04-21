@@ -1,0 +1,3 @@
+### <a name="azure-resource-manager-and-azure-service-management"></a>Azure erőforrás-kezelő és Azure szolgáltatás kezelése
+ 
+Ez a cikk az erőforrás-kezelő, amely a Microsoft által létrehozott szolgáltatás kezelése lapon erőforrásként keresztül létrehozott Azure erőforrás van. Az erőforrás-kezelő előnnyel magyarázatot olvassa el az [Azure számítja ki, a hálózati és a tárterület-szolgáltatók az Azure erőforrás-kezelő](../articles/virtual-machines/virtual-machines-windows-compare-deployment-models.md)című témakört. A művelethez a azonos az adott erőforrás készült Azure szolgáltatás kezelése a következő témakör:

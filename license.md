@@ -1,0 +1,7 @@
+Copyright (c) Microsoft Corporation.  Az elosztott a következő feltételek mellett:
+ 
+1. A Microsoft és bármely a munkatársak számára a projekt minden ruházza fel a licenc, csoportban a megfelelő szerzői jog, a Microsoft Azure dokumentációt a [Creative Commons alapon 3.0 Amerikai Egyesült Államok licenc](http://creativecommons.org/licenses/by/3.0/us/legalcode)csoportban.  Ezeken kívül részletez minta kódrészleteket dokumentációjában tartalmaz, a Microsoft és bármely ilyen munkatársak ruházza fel a további licencre, csoportban a megfelelő szerződés KIZÁRÓLAGOSSÁGA, a kód segítségével fejlesztése, vagy a szoftver tervezése a Microsoft Azure.
+ 
+2.  Microsoft, Windows, Microsoft Azure és/vagy más Microsoft-termékek és szolgáltatások dokumentációjában hivatkozott védjegyekkel vagy a Microsoft az Amerikai Egyesült Államokban, illetve más országokban bejegyzett védjegy lehetnek. Ez a licenc nem jogokat, minden olyan nevek emblémák, illetve védjegyekkel használni. A Microsoft általános védjegy irányelveket lépjen a [http://go.microsoft.com/fwlink/?LinkID=254653](http://go.microsoft.com/fwlink/?LinkID=254653).
+ 
+3.  A Microsoft és bármely összes többi jogok, a szerzői jogi adatai, szabadalmak vagy védjegyekkel vagy felismerhetővé, munkatársak tartalék estoppel vagy más módon.

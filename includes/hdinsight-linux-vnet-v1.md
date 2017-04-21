@@ -1,0 +1,3 @@
+> Nem használhatja egy v1 (klasszikus) Azure virtuális Linux-alapú HDInsight-hálózaton. A virtuális hálózat kell v2 (Azure erőforrás-kezelő,) ahhoz, hogy azt szeretné, hogy a során HDInsight fürt létrehozása az Azure előzetes portálon lehetőségként vagy is használható, amikor fürt létrehozása az Azure CLI vagy Azure PowerShell.
+> 
+> Erőforrások v1 hálózaton van, és végre kívánja hajtani HDInsight közvetlenül elérhető ezeket az erőforrásokat a virtuális hálózaton keresztül, lásd: [Csatlakozás klasszikus VNets az új VNets](../articles/vpn-gateway/vpn-gateway-connect-different-deployment-models-portal.md) az egy v2 virtuális hálózati csatlakozás v1 virtuális hálózathoz olvashat. Miután a kapcsolat létrejött, a v2 virtuális hálózat a HDInsight fürt is létrehozhat.
